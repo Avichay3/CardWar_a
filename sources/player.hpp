@@ -1,13 +1,16 @@
 #include <string>
 #include <iostream>
 
+const int NUMOFCARDS = 26;
+const int FULL
+
 namespace ariel{
-    class player{
+    class Player{
     private:
-        std::String name;
+        std::string name;
     public:
-        player(){}
-        player(std::String name);
+        Player(){}
+        Player(std::string name);
 
         int stackSize(){return 27};
         int cardsTaken(){return 27};
