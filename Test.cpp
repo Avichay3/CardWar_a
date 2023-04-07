@@ -22,6 +22,11 @@ TEST_CASE("The main check"){
     CHECK_THROWS(game.printWiner());
     CHECK_THROWS(game.playAll());
     CHECK_THROWS(game.printStats());
-
 }
 
+TEST_CASE("check for see if game stats are correct"){
+    Player p1("player1");
+    Player p2("player2");
+    Game game(p1,p2);
+    int number_of_all_cards = 52;
+}
