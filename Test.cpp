@@ -56,7 +56,7 @@ TEST_CASE("checking if exception has thrown if the game is not finished"){
 }
 
     
- TEST_CASE("check other functions"){
+
   
 TEST_CASE("Checking if game function called after the game finish"){
     Player p1("player1");
@@ -65,6 +65,21 @@ TEST_CASE("Checking if game function called after the game finish"){
     game.playAll();
     CHECK_THROWS(game.playTurn());
     CHECK_THROWS(game.playAll());
+}
+
+TEST_CASE("throwing errors from the functions")
+{
+    Player p1("Alice");
+    Player p2("Bob");
+    Game game(p1, p2);
+    for (int i = 0; i < 5; i++)
+    {
+        game.playTurn();
+    }
+    CHECK_NOTHROW(game.printLastTurn());
+    CHECK_NOTHROW(game.printLog());
+    CHECK_NOTHROW(game.printStats());
+    CHECK_NOTHROW(game.printWiner());
 }
 
 
@@ -77,6 +92,15 @@ TEST_CASE("check if other fucntions in game works good"){
     CHECK_NOTHROW(game.printLog());
     CHECK_NOTHROW(game.printWiner());
     CHECK_NOTHROW(game.printStats());
+}
+
+TEST_CASE("Printing the winner")
+{
+    Player p1("Alice");
+    Player p2("Bob");
+    Game game(p1, p2);
+    game.playAll();
+    CHECK_NOTHROW(game.printWiner());
 }
 
 
@@ -94,3 +118,5 @@ TEST_CASE("Checking if some player get rank greater than 26"){
     game.playAll();
     CHECK((p1.cardesTaken() <= 26 || p2.cardesTaken() <= 26));
 }
+
+
