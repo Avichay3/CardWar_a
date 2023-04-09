@@ -8,8 +8,7 @@ namespace ariel{
         Game();
         void playTurn();
         void printLastTurn();
-        
-    namespace ariel{}
+
   
         void playAll ();
         void printWiner();

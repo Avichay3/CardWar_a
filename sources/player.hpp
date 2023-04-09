@@ -6,7 +6,7 @@ namespace ariel{
     private:
         string name;
 
-    namespace ariel{}
+
   
         int cards_left, won_cards;
         bool is_playing;
